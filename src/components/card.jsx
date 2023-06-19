@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Draggable from 'react-draggable';
+// import { Draggable, Droppable } from 'react-drag-and-drop';
 export default function Card(props) {
   return (
     <Draggable>
@@ -48,7 +49,6 @@ export default function Card(props) {
         <div className='profile-images'>
              {
               props.profile && props.profile.map((img)=>{
-                console.log(img,'kkkkkkkkkkk')
                 return(
                   <img src={img} alt="" />
                 )

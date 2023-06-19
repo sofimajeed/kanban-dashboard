@@ -4,8 +4,7 @@ import Card from './components/card';
 import DashboardTitle from './components/dashboard-title';
 import Searchbar from './components/searchbar';
 import Sidebar from './components/sidebar';
-import Draggable from 'react-draggable';
-
+import { Draggable, Droppable } from 'react-drag-and-drop';
 function App() {
   let pic1 = ['pic1.png']
   let pic2 = ['pic2.png','pic3.png']
@@ -13,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <div className='sidebar'>
+            {/* <div className='border-bottom'></div> */}
             <Sidebar />
       </div>
       <div className='main-board'>
@@ -22,36 +22,38 @@ function App() {
       <div className='dash-title'>
       <DashboardTitle />
       </div>
+      <Draggable>
       <div className='display-row d-column'>
         <div className='cards-column'>
-          <div>
+          <div className='onToDo'>
             <span className='margin-right2'><img src="/a.png" alt=""  /></span> 
             <span className='status-text margin-right2'>To Do</span>
             <span className='count'>4</span>
           </div>
-          <Card profile={['/1.png,/2.png,/3.png']} status={'low'} title={'Brainstorming'} description={"Brainstorming brings team members' diverse experience into play."} files={0} comments={10} />
-          <Card profile={['1.png,2.png,3.png']} status={'High'} title={'Research'} description={"User research helps you to create an optimal product for users."} files={3} comments={10} />
-          <Card profile={['1.png,2.png,3.png']} status={'High'} title={'Wireframes'} description={"Low fidelity wireframes include the most basic content and visuals."} files={13} comments={10} />
+          <Card profile={['1.png','2.png','3.png']} status={'low'} title={'Brainstorming'} description={"Brainstorming brings team members' diverse experience into play."} files={0} comments={10} />
+          <Card profile={['1.png','2.png']} status={'High'} title={'Research'} description={"User research helps you to create an optimal product for users."} files={3} comments={10} />
+          <Card profile={['1.png','2.png','3.png']} status={'High'} title={'Wireframes'} description={"Low fidelity wireframes include the most basic content and visuals."} files={13} comments={10} />
         </div>
         <div className='cards-column'>
-        <div>
+          <div className='onProgress'>
             <span className='margin-right2'><img src="/Ellipse 9.png" alt="" /></span>
             <span className='status-text margin-right2'>on Progress</span>
             <span className='count'>3</span>
           </div>
-          <Card  profile={['1.png,2.png,3.png']} status={'low'} title={'Onboarding Illustrations'} description={""} images={pic1} files={15} comments={14}/>
-          <Card profile={['1.png,2.png,3.png']}  status={'low'} title={'Moodboard'} description={""} files={10} images={pic2} comments={9}/>
+          <Card  profile={['2.png','3.png']} status={'low'} title={'Onboarding Illustrations'} description={""} images={pic1} files={15} comments={14}/>
+          <Card profile={['1.png','2.png',]}  status={'low'} title={'Moodboard'} description={""} files={10} images={pic2} comments={9}/>
         </div>
         <div className='cards-column'>
-        <div>
+        <div className='onDone'>
             <span className='margin-right2'><img src="/Ellipse 11.png" alt="" /></span>
             <span className='status-text margin-right2'>Done</span>
             <span className='count'>2</span>
           </div>
-          <Card  profile={['/1.png,/2.png,/3.png']} status={'Completed'} title={'Mobile App Design'} description={""} images={pic4} files={15} comments={12} />
-          <Card  profile={['/1.png,/2.png,/3.png']} status={'Completed'} title={'Design System'} description={"It just needs to adapt the UI from what you did before "} files={15} comments={12} />
+          <Card  profile={['1.png',]} status={'Completed'} title={'Mobile App Design'} description={""} images={pic4} files={15} comments={12} />
+          <Card  profile={['2.png']} status={'Completed'} title={'Design System'} description={"It just needs to adapt the UI from what you did before "} files={15} comments={12} />
         </div>
       </div>
+      </Draggable>
       </div>
       
     </div>

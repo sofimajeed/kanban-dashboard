@@ -8,7 +8,7 @@ export default function Searchbar() {
                 <input type="text" placeholder='Search for anything...' />
             </div>
 
-            <div className='display-row'>
+            <div className='display-row profile-details'>
                 <div className='margin-right shift-right'>
                     <img src="/Group5.png" alt="" />
                 </div>
